@@ -1,0 +1,135 @@
+/* --- WING.COM STYLE STICKY SCROLL ANIMATIONS --- */
+
+.benefits-scroll-section {
+    position: relative;
+    padding: 120px 0;
+    background-color: var(--bg-secondary);
+}
+
+.benefits-grid {
+    display: flex;
+    align-items: flex-start;
+    /* Important for sticky child! */
+    gap: 80px;
+    width: 100%;
+}
+
+.benefits-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 250px;
+    /* Large space between points so only one really commands attention at a time */
+    padding-top: 25vh;
+    /* Strong initial scroll-in distance */
+    padding-bottom: 50vh;
+    /* Extra large bottom padding ensures the image stays pinned comfortably when observing the last item! */
+}
+
+.benefit-scroll-item {
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.4s ease;
+}
+
+.benefit-scroll-item:not(.active) {
+    opacity: 0.3 !important;
+    /* Managed by fame-motion active class */
+}
+
+.benefit-scroll-item.active {
+    opacity: 1 !important;
+}
+
+.benefit-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.benefit-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.benefit-title {
+    font-size: clamp(32px, 4vw, 42px);
+    font-weight: 400;
+    margin: 0;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.benefit-body {
+    padding-left: 60px;
+    padding-right: 40px;
+}
+
+.benefit-body p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.benefits-right {
+    flex: 1;
+    /* Sticky magic right here */
+    position: sticky;
+    top: 15vh;
+    /* Stick 15% down from top of viewport */
+    height: 70vh;
+    /* Taller image */
+    display: flex;
+    align-items: center;
+}
+
+.benefits-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 24px;
+    will-change: transform, opacity;
+}
+
+@media (max-width: 900px) {
+    .benefits-grid {
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .benefits-right {
+        position: relative;
+        top: 0;
+        height: 60vw;
+        min-height: 350px;
+        order: -1;
+    }
+
+    .benefits-left {
+        padding-top: 0;
+        padding-bottom: 0;
+        gap: 40px;
+    }
+
+    .benefit-body {
+        padding-right: 0;
+    }
+}

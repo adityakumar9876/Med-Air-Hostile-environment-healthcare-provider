@@ -1,0 +1,53 @@
+/* Global utility classes and App layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 32px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--bg-dark);
+  border: 1px solid var(--bg-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.btn-accent {
+  background-color: var(--accent);
+  color: var(--text-inverse);
+}
+
+.btn-accent:hover {
+  background-color: #0044cc;
+}
