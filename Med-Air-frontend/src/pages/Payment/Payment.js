@@ -24,7 +24,8 @@ function Payment() {
         setIsProcessing(true);
 
         try {
-            const res = await fetch('http://localhost:5000/checkout', {
+            const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+            const res = await fetch(`${apiUrl}/checkout`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, cart: cartItems })
